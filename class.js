@@ -38,23 +38,34 @@ class Mission
 {
     constructor(
         objective,
+        oxyLvl,
         launchDateDay,
         launchDateMonth,
         launchDateYear,
-        spaceCraft
+        spaceCraft,
+        numOfAstronauts
     )
     {
         this.objective = objective;
+        this.oxyLvl = oxyLvl;
         this.launchDateDay = launchDateDay;
         this.launchDateMonth = launchDateMonth;
         this.launchDateYear = launchDateYear;
         this.spaceCraft = spaceCraft;
+        this.numOfAstronauts = numOfAstronauts;
     }
 
     displayMissionParams()
     {
         alert("The spacecraft " + this.spaceCraft + " will launch on " + 
-            this.launchDateDay + " of " + this.launchDateMonth + ", " + this.launchDateYear);
+            this.launchDateDay + " of " + this.launchDateMonth + ", " + this.launchDateYear + " with an o2 level of " + this.oxyLvl + "%");
+    }
+
+    launch()
+    {
+        console.log("Launch sequence started.");
+        alert("Launch sequence started.");    
+        return true;    
     }
     
     displayMissionData()
@@ -66,4 +77,28 @@ class Mission
     {
 
     }
+}
+
+function launchFall()
+{
+    console.log("launchFall() started.");
+    fallLaunch.launch();
+}
+
+function displayFall()
+{
+    console.log("displayFall() started.");
+    fallLaunch.displayMissionParams();
+}
+
+function launchSpring()
+{
+    console.log("launchSpring() started.");
+    springLaunch.launch();
+}
+
+function displaySpring()
+{
+    console.log("displaySpring() started.");
+    springLaunch.displayMissionParams();
 }
